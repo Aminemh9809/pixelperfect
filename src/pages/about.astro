@@ -1,0 +1,35 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import teamImage from '../assets/team.jpg';
+import { Image } from 'astro:assets';
+---
+
+<html lang="fr">
+  <head>
+    <title>À propos | PixelPerfect</title>
+  </head>
+  <body class="font-sans text-gray-800">
+    <Header />
+
+    <main class="px-6 py-12 max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-8">À propos de nous</h1>
+
+      <section class="flex flex-col md:flex-row items-center gap-8">
+        <div class="md:w-1/2">
+          <Image src={teamImage} alt="Notre équipe" class="rounded-lg shadow-md" />
+        </div>
+        <div class="md:w-1/2">
+          <p class="text-lg text-gray-700 mb-4">
+            Chez PixelPerfect, nous sommes passionnés par le design et le code. Notre équipe est composée de développeurs, designers et stratèges numériques qui travaillent ensemble pour créer des expériences utilisateur exceptionnelles.
+          </p>
+          <p class="text-lg text-gray-700">
+            Depuis 2020, nous accompagnons des clients dans tous les secteurs pour créer des solutions digitales sur-mesure.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
+</html>
