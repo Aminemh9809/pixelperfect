@@ -3,33 +3,49 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import teamImage from '../assets/team.jpg';
 import { Image } from 'astro:assets';
+import '../styles/global.css';
+
 ---
 
-<html lang="fr">
-  <head>
-    <title>À propos | PixelPerfect</title>
-  </head>
-  <body class="font-sans text-gray-800">
-    <Header />
+ <html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos - Agence PixelPerfect</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+  <main class="max-w-5xl mx-auto px-6 py-20">
+    <h1 class="text-5xl font-extrabold text-indigo-700 mb-8">À propos de PixelPerfect</h1>
+    
+    <p class="mb-6 text-lg">
+      Chez <span class="font-semibold text-indigo-600">PixelPerfect</span>, nous croyons que chaque pixel compte. Notre agence de design et développement web est dédiée à créer des expériences numériques élégantes, intuitives et performantes.
+    </p>
+    
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-indigo-600 mb-4">Notre mission</h2>
+      <p class="text-gray-700">
+        Offrir à nos clients des solutions sur-mesure, alliant créativité et technologie moderne, pour booster leur présence en ligne et transformer leurs idées en projets concrets.
+      </p>
+    </section>
 
-    <main class="px-6 py-12 max-w-6xl mx-auto">
-      <h1 class="text-4xl font-bold text-center mb-8">À propos de nous</h1>
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-indigo-600 mb-4">Notre équipe</h2>
+      <p class="text-gray-700">
+        Une équipe passionnée, composée de développeurs, designers, et marketeurs, qui travaillent main dans la main pour dépasser les attentes et livrer des projets de qualité, toujours dans les délais.
+      </p>
+    </section>
 
-      <section class="flex flex-col md:flex-row items-center gap-8">
-        <div class="md:w-1/2">
-          <Image src={teamImage} alt="Notre équipe" class="rounded-lg shadow-md" />
-        </div>
-        <div class="md:w-1/2">
-          <p class="text-lg text-gray-700 mb-4">
-            Chez PixelPerfect, nous sommes passionnés par le design et le code. Notre équipe est composée de développeurs, designers et stratèges numériques qui travaillent ensemble pour créer des expériences utilisateur exceptionnelles.
-          </p>
-          <p class="text-lg text-gray-700">
-            Depuis 2020, nous accompagnons des clients dans tous les secteurs pour créer des solutions digitales sur-mesure.
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <Footer />
-  </body>
+    <section>
+      <h2 class="text-3xl font-bold text-indigo-600 mb-4">Pourquoi nous choisir ?</h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-2">
+        <li>Approche centrée utilisateur pour un design accessible et efficace</li>
+        <li>Technologies modernes comme Astro, React, Tailwind CSS</li>
+        <li>Support client réactif et accompagnement personnalisé</li>
+        <li>Respect des délais et budgets</li>
+      </ul>
+    </section>
+  </main>
+  <Footer />
+</body>
 </html>

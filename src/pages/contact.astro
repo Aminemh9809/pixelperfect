@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <main class="min-h-screen flex items-center justify-center p-6">
+      <div class="bg-white rounded-xl shadow-lg p-8 max-w-xl w-full">
+        <h1 class="text-3xl font-bold mb-6 text-indigo-600">Contact Us</h1>
+        <form action="/success" method="POST" class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium">Name</label>
+            <input type="text" id="name" name="name" required class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium">Email</label>
+            <input type="email" id="email" name="email" required class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium">Message</label>
+            <textarea id="message" name="message" rows="5" required class="mt-1 w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"></textarea>
+          </div>
+
+          <div>
+            <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
