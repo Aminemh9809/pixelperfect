@@ -1,0 +1,61 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const posts = [
+  {
+    id: 1,
+    title: "Comment créer un site web moderne en 2025",
+    date: "2025-05-20",
+    excerpt: "Découvrez les meilleures pratiques pour créer un site web moderne, rapide et responsive avec Astro et Tailwind CSS.",
+    author: "Amine",
+    slug: "creer-site-web-moderne-2025"
+  },
+  {
+    id: 2,
+    title: "Les tendances design à suivre cette année",
+    date: "2025-04-10",
+    excerpt: "Un tour d’horizon des tendances design web à ne pas manquer pour garder votre site frais et attractif.",
+    author: "Sophie",
+    slug: "tendances-design-2025"
+  },
+  {
+    id: 3,
+    title: "Pourquoi choisir Astro pour vos projets ?",
+    date: "2025-03-05",
+    excerpt: "Astro révolutionne le développement web. On vous explique pourquoi il est idéal pour créer des sites performants.",
+    author: "Lucas",
+    slug: "pourquoi-choisir-astro"
+  }
+]
+---
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog - PixelPerfect</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+    <Header />
+
+<body class="bg-gray-50 text-gray-900 font-sans">
+  <main class="max-w-6xl mx-auto px-6 py-20">
+    <h1 class="text-5xl font-extrabold text-indigo-700 mb-12">Blog de PixelPerfect</h1>
+    <div class="grid md:grid-cols-3 gap-10">
+      {posts.map(post => (
+        <article key={post.id} class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <h2 class="text-2xl font-semibold text-indigo-600 mb-2">{post.title}</h2>
+          <p class="text-gray-600 text-sm mb-4">
+            <time datetime={post.date}>{new Date(post.date).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</time> • Par {post.author}
+          </p>
+          <p class="text-gray-700 mb-4">{post.excerpt}</p>
+          <a href={`/blog/${post.slug}`} class="text-indigo-600 font-semibold hover:underline">Lire l'article →</a>
+        </article>
+      ))}
+    </div>
+  </main>
+      <Footer />
+
+</body>
+</html>
